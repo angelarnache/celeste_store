@@ -22,7 +22,7 @@ def register_products(quantity_in=10):
 
         if option == 1:
             for i in range(quantity_in):
-                print(f"\n──── product {i+1} ─────")
+                print(f"\n──── product ─────")
                 word = input("Enter product: ")
                 word_2 = (input("Enter quantity: "))
                 if word_2.isdigit():
@@ -42,7 +42,8 @@ def register_products(quantity_in=10):
                 
                 
                 option_2 = input("Do you want to continue? yes/no: ").lower()
-                
+                if option_2 =="yes":
+                    continue
                 if option_2 == "no":
                     print("\nProduct list:")
                     print(f"Products: {products}")
