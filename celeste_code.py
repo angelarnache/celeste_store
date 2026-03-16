@@ -24,8 +24,17 @@ def register_products(quantity_in=10):
             for i in range(quantity_in):
                 print(f"\n──── product {i+1} ─────")
                 word = input("Enter product: ")
-                word_2 = int(input("Enter quantity: "))
-                word_3 = float(input("Enter the product cost: "))
+                word_2 = (input("Enter quantity: "))
+                if word_2.isdigit():
+                    word_2 =int(word_2)
+                else:
+                    print("Invalid digit, please enter whole numbers")
+                    continue
+                try:
+                    word_3 = float(input("Enter the product cost: "))
+                except ValueError:
+                    print("Invalid digit, please enter numbers")
+                    continue
                 
                 products.append(word)
                 amounts.append(word_2)
@@ -43,6 +52,9 @@ def register_products(quantity_in=10):
                     print(f"Total per product: {total}")
                     print(f"Grand Total: {sum(total)}\n")
                     break 
+                else:
+                    print("Only yes or no is accepted")
+                    continue
                 
         elif option == 2:
             print("See you later!")
